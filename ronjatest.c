@@ -14,13 +14,13 @@ module_param(exit_message, charp, 0444);
 
 static int __init demo_init(void)
 {
-	printk(KERN_INFO "Module says: %s\n", init_message);
+	printk(KERN_INFO KBUILD_MODNAME ": %s\n", init_message);
 	return 0;
 }
 
 static void __exit demo_exit(void)
 {
-	printk(KERN_INFO "Module says: %s\n", exit_message);
+	printk(KERN_INFO KBUILD_MODNAME ": %s\n", exit_message);
 }
 
 module_init(demo_init);
